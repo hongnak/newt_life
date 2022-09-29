@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "216880362138",
+    "project_id": "newt-life",
+    "storage_bucket": "newt-life.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:216880362138:android:29a0b0f99b3c6ca891a523",
+        "android_client_info": {
+          "package_name": "com.example.newt_life"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "216880362138-5t63mg3dqjgflqted1nfic07f96mu6l9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbYNLsXKMaH3rSpryOIcXW516dio6GpCM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "216880362138-5t63mg3dqjgflqted1nfic07f96mu6l9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

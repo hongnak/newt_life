@@ -1,9 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_email_sender/flutter_email_sender.dart';
 import 'package:share_plus/share_plus.dart';
 
 Widget settingWidget() {
-  const String shareText = 'https://apps.apple.com/jp/app/%E7%8C%ABya%E8%90%8C%E6%97%A5%E8%AF%ADquiz/id1563615513';
+  const String shareText = 'newt_life';
   Icon arrowIcon = const Icon(Icons.arrow_forward_ios_sharp, size: 16);
+
+  final Email email = Email(
+    body: 'Email body',
+    subject: 'Email subject',
+    recipients: ['Michael.Schenker2020@gmail.com'],
+    isHTML: false,
+  );
+
 
   Widget widget = ListView(
     children: [
@@ -16,7 +25,10 @@ Widget settingWidget() {
       ListTile(
           leading: const Icon(Icons.mail_outline),
           title: const Text('お問い合わせ'),
-          trailing: arrowIcon
+          trailing: arrowIcon,
+          onTap: () async {
+            await FlutterEmailSender.send(email);
+          },
       ),
       const Divider(),
       ListTile(
@@ -28,7 +40,7 @@ Widget settingWidget() {
       ListTile(
           leading: const Icon(Icons.ios_share),
           title: const Text('友達に教える'),
-          trailing: const Icon(Icons.arrow_forward_ios_sharp, size: 16),
+          trailing: arrowIcon,
           onTap: () {
             Share.share(shareText);
           }

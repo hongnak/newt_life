@@ -50,6 +50,7 @@ dependencies:
   flutter_native_timezone: ^2.0.0
   google_fonts: ^3.0.1
   share_plus: ^4.4.0
+  flutter_email_sender: ^5.1.0
 
 dev_dependencies:
   flutter_test:

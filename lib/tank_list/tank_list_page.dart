@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:newt_life/add_tank/add_tank_page.dart';
 import 'package:newt_life/domain/tank.dart';
+import 'package:newt_life/setting/setting_page.dart';
 import 'package:newt_life/tank_list/tank_list_model.dart';
-import 'package:newt_life/widgets/appbar.dart';
 import 'package:newt_life/widgets/tank_list_widgets.dart';
 import 'package:provider/provider.dart';
 
@@ -14,7 +14,17 @@ class TankListPage extends StatelessWidget {
     return ChangeNotifierProvider<TankListModel>(
       create: (_) => TankListModel()..fetchTankList(),
       child: Scaffold(
-        appBar: appBar('水槽リスト'),
+        appBar: AppBar(
+          title: const Text('水槽リスト'),
+          actions: [
+            IconButton(
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => const SettingPage(), fullscreenDialog: true));
+                },
+                icon: const Icon(Icons.settings)
+            )
+          ],
+        ),
         body: Consumer<TankListModel>(
           builder: (context, model, child) {
             final List<Tank>? tanks = model.tanks;
